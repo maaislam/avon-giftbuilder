@@ -1,0 +1,53 @@
+.yotpo-bottomline {
+    margin-bottom: 10px
+}
+
+.yotpo span.yotpo-rev-count {
+    margin-left: 6px;
+    font-size: 14px;
+    line-height: 15px;
+    color: #6c6c6c;
+}
+
+.yotpo-stars {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    background: -webkit-gradient(linear, left top, right top, from(#6b22c3), to(#db495f));
+    background: -o-linear-gradient(left, #6b22c3 0, #db495f 100%);
+    background: linear-gradient(90deg, #6b22c3 0, #db495f 100%)
+}
+
+.yotpo-icon {
+    display: block;
+    color: #ec008c;
+    background-color: #fff !important;
+    mix-blend-mode: luminosity
+}
+
+.yotpo-icon::before {
+    content: "\e60e";
+    font-family: yotpo-widget-font !important;
+    background: 0 0;
+    background-clip: content-box;
+    -webkit-background-clip: content;
+    -webkit-text-fill-color: inherit
+}
+
+.yotpo-icon.empty-star::before {
+    content: "\e61b";
+    font-family: yotpo-widget-font !important;
+    background: 0 0;
+    background-clip: content-box;
+    -webkit-background-clip: content;
+    -webkit-text-fill-color: inherit
+}
+
+.yotpo-icon.half-star::before {
+    content: "\e61a";
+    font-family: yotpo-widget-font !important;
+    background: 0 0;
+    background-clip: content-box;
+    -webkit-background-clip: content;
+    -webkit-text-fill-color: inherit
+}

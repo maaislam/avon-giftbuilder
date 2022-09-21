@@ -1,0 +1,19 @@
+.product-price-container {
+
+    margin: 24px auto 16px;
+}
+
+.product-price-container .money:not(.original-price),
+.product-price-container .money-discount {
+    font-size: 20px;
+    line-height: 1.3
+}
+
+@media only screen and (min-width: 992px) {
+
+    .product-price-container .money:not(.original-price),
+    .product-price-container .money-discount {
+        font-size: 18px;
+        line-height: 1.3
+    }
+}

@@ -1,0 +1,78 @@
+.dd-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 32px;
+    border: 1px solid #e3e3e3;
+}
+
+.dd-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    border: 1px solid #e3e3e3;
+    cursor: pointer;
+}
+
+.dd-header .dd-arrow {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.dd-header svg {
+    display: block;
+    width: 11px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.dd-wrapper .dd-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: calc(100% + 2px);
+    max-height: 300px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    overflow-y: scroll;
+
+}
+
+.dd-wrapper .dd-options.active {
+
+    display: block;
+}
+
+.dd-wrapper .dd-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 10px 8px 17px;
+    cursor: pointer;
+}
+
+.dd-wrapper .dd-option p {
+    margin-bottom: 0;
+}
+
+.dd-option:hover .dd-circle-img {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #000;
+}
+
+.dd-circle-img {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 16px;
+    background-position: center;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.dd-circle-img.active-swatch {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #000;
+}
