@@ -13,8 +13,13 @@ root.render(
 const portalContainer = document.createElement('div');
 portalContainer.id = `gift-builder-modal`;
 
-document.body.style.position = 'relative';
-document.body.style.overflowX = 'hidden';
+document.body.classList.add('giftbuilder-body');
 if (!document.getElementById('gift-builder-modal')) {
   document.body.insertAdjacentElement('afterbegin', portalContainer);
 }
+
+window.addEventListener('hashchange', ({ newURL, oldURL }) => {
+  if (newURL.includes('build-a-gift') && oldURL.includes('#giftbuilder')) {
+    window.location.href = window.location.href.split('#')[0];
+  }
+});

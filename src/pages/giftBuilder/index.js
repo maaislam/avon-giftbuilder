@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PdpModal from '../../components/pdpPopup/PdpPopup';
 import Card from '../../components/productCard/Card';
 import VariantDropdown from '../../components/variantDropdown/VariantDropdown';
@@ -9,10 +9,16 @@ import ProductRows from './ProductRows';
 import './giftbuilder.css';
 import formatPrice from '../../helpers/formatPrice';
 import OfferBar from '../../components/offerbar/OfferBar';
+import Loader from '../../components/Loader';
+import scrollToTop from '../../helpers/scrollTop';
 
 const GiftBuilder = ({ pageData }) => {
   const { bundledPrice, allData } = pageData;
   //console.log(pageData);
+  useEffect(() => {
+    scrollToTop();
+    window.location.hash = '#giftbuilder';
+  }, []);
 
   const { chosenProduct } = useContext(ChosenProductContext);
   const { popupState } = useContext(PdpPopupContext);
@@ -31,11 +37,13 @@ const GiftBuilder = ({ pageData }) => {
           <b>Mix & Match Glam & Go</b> - 3 steps to earn yourself extra savings.
         </h4>
         {bundledPrice ? <h2>{`Offer price: ${formatPrice(bundledPrice)}`}</h2> : ''}
-        {allData && (
+        {allData ? (
           <>
             <ProductRows rowsData={allData} />
             <OfferBar bundledPrice={bundledPrice} />
           </>
+        ) : (
+          <Loader />
         )}
         {popupState && (
           <PdpModal>

@@ -73,6 +73,17 @@
     overflow: hidden;
 }
 
+.dd-circle-img.hide {
+    display: none;
+}
+
+.dd-option.not-available {
+    pointer-events: none;
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+
 .dd-circle-img.active-swatch {
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #000;
 }

@@ -7,10 +7,12 @@ const VariantDropdown = ({ variants, selected, onSelectionChange }) => {
   const [selectedSwatchIdx, setSelectedSwatchIdx] = useState('');
 
   const variantList = variants.map((variant, index) => {
+    console.log(variant);
     const swatchName = variant.name.split('-')[1].trim();
+    const isAvailableClass = variant.available ? '' : 'not-available';
     return (
       <div
-        className='dd-option'
+        className={`${isAvailableClass} dd-option`}
         key={index}
         onClick={() => {
           onSelectionChange(variant);
@@ -19,8 +21,10 @@ const VariantDropdown = ({ variants, selected, onSelectionChange }) => {
         }}
       >
         <div
-          className={`${selectedSwatchIdx === index ? 'active-swatch' : ''} dd-circle-img`}
-          style={{ backgroundImage: `url(${variant.featured_image.src})` }}
+          className={`${selectedSwatchIdx === index ? 'active-swatch' : ''} dd-circle-img ${
+            variant.featured_image ? '' : 'hide'
+          }`}
+          style={{ backgroundImage: `url(${variant.featured_image?.src})` }}
         ></div>
         <p>{swatchName}</p>
       </div>
@@ -32,7 +36,10 @@ const VariantDropdown = ({ variants, selected, onSelectionChange }) => {
   return (
     <div className='dd-wrapper'>
       <div className='dd-header' onClick={() => setDropdownState(!dropdownState)}>
-        <div className='dd-circle-img ' style={{ backgroundImage: `url(${selectedItem.featured_image.src})` }}></div>
+        <div
+          className={`dd-circle-img ${selectedItem.featured_image ? '' : 'hide'}`}
+          style={{ backgroundImage: `url(${selectedItem.featured_image?.src})` }}
+        ></div>
         <div className='dd-header-title'>{selectedItem.name.split('-')[1].trim()}</div>
         <div className='dd-arrow'>
           <svg aria-hidden='true' className='icon icon--wide icon-chevron-down' viewBox='0 0 10 6'>

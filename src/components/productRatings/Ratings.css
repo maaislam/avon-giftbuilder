@@ -7,6 +7,13 @@
     font-size: 14px;
     line-height: 15px;
     color: #6c6c6c;
+
+}
+
+@media only screen and (max-width: 800px) {
+    .yotpo span.yotpo-rev-count {
+        font-size: 12px;
+    }
 }
 
 .yotpo-stars {
