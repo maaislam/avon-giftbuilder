@@ -5,11 +5,11 @@ import ProductPrice from '../productPriceBlock/ProductPrice';
 import './Offerbar.css';
 
 const OfferBar = ({ bundledPrice }) => {
-  const { selectedProducts } = useContext(selectedProductContext);
+  const { selectedProducts, setSelectedProducts } = useContext(selectedProductContext);
 
-  const [addtoCart, setAddtoCart] = useState(false);
+  const [addtoCart, setAddtoCart] = useState('Add-to-cart');
 
-  console.log(selectedProducts);
+  //console.log(selectedProducts);
   const cdnDomain = 'https://ucds.ams3.digitaloceanspaces.com/AvonGifting';
   const selectedCount = selectedProducts.length;
 
@@ -32,6 +32,7 @@ const OfferBar = ({ bundledPrice }) => {
       return new Promise((resolve) => setTimeout(resolve, ms));
     }
     const addAllToCart = async () => {
+      const addToCartEndpoint = '/cart/add.js';
       const options = imagesData.map(({ variantSelected }) => {
         const payload = {
           id: variantSelected.id,
@@ -46,17 +47,21 @@ const OfferBar = ({ bundledPrice }) => {
           body: JSON.stringify(payload),
         };
       });
-      fetch('/cart/add.js', options[0])
+      fetch(addToCartEndpoint, options[0])
         .then(() => delay(1000))
-        .then(() => fetch('/cart/add.js', options[1]).then(() => delay(1000)))
-        .then(() => fetch('/cart/add.js', options[2]))
-        .then(() => window.location.reload());
+        .then(() => fetch(addToCartEndpoint, options[1]).then(() => delay(1000)))
+        .then(() => fetch(addToCartEndpoint, options[2]))
+        .then(() => {
+          setAddtoCart('Added-to-cart');
+
+          window.location.href = window.location.href.split('#')[0];
+        });
     };
-    addtoCart && addAllToCart();
-  }, [addtoCart, imagesData]);
+    addtoCart === 'Adding-to-cart' && addAllToCart();
+  }, [addtoCart, imagesData, setSelectedProducts]);
 
   return (
-    <div className='offerbar-container'>
+    <div className={`${selectedProducts.length > 0 ? 'item-selected' : 'no-item-selected'} offerbar-container`}>
       <div className='offerbar-container-inner'>
         <div className='item-count'>
           {selectedCount} item{`${selectedCount > 1 ? 's' : ''}`} selected
@@ -79,8 +84,8 @@ const OfferBar = ({ bundledPrice }) => {
             <div className='offer-details'>
               <ProductPrice oldPrice={bundledPrice} priceYouPay={total} />
             </div>
-            <div className='addtocart-btn' onClick={() => setAddtoCart(true)}>
-              Add to basket
+            <div className={`addtocart-btn ${addtoCart || 'add-to-cart'}`} onClick={() => setAddtoCart('Adding-to-cart')}>
+              {addtoCart.split('-').join(' ') || 'Add to cart'}
             </div>
           </>
         ) : (

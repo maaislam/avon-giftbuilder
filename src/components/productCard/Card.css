@@ -2,6 +2,20 @@
     display: block;
     width: 100%;
     max-width: 280px;
+    
+}
+
+@media only screen and (max-width: 800px) {
+    .product-card {
+        max-width: 230px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .product-card {
+        max-width: 170px;
+        margin-right: auto;
+    }
 }
 
 .product-details-wrapper {

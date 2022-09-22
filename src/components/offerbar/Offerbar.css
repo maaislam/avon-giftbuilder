@@ -1,13 +1,23 @@
 .offerbar-container {
     position: sticky;
-    bottom: 0;
+    bottom: -120px;
     width: 100vw;
     margin-inline-start: 50%;
-    padding: 20px;
+    padding: 20px 0 40px;
     color: #fff;
     background-color: rgba(33, 33, 33, 95%);
     transform: translateX(-50%);
     z-index: 99;
+}
+
+.offerbar-container.item-selected {
+    bottom: 0;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.offerbar-container.no-item-selected {
+    bottom: -120px;
+    animation: slide-out-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .offerbar-container-inner {
@@ -50,7 +60,33 @@
     cursor: pointer;
 }
 
+.offerbar-container .addtocart-btn.adding {
+    pointer-events: none;
+}
+
 .offerbar-container .addtocart-btn:hover {
-    color: #fff;
-    background-color: #333;
+    color: #000;
+
+
+}
+
+@keyframes slide-in-bottom {
+    0% {
+
+        bottom: -120px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes slide-out-bottom {
+    0% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: -120px;
+    }
 }

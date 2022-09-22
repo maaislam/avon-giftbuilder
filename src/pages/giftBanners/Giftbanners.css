@@ -1,0 +1,28 @@
+.giftbanners {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 60px 20px;
+    margin: 0 auto;
+}
+
+.giftbanners .giftbanner {
+
+    border: 1px solid #ECECEC;
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.06);
+}
+
+.giftbanners .giftbanner .product-price-container {
+    flex-direction: column;
+    align-items: center;
+    margin: 14px 0 0;
+}
+
+.giftbanner-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px 40px;
+    text-align: center;
+}

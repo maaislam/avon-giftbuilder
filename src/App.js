@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { pamperData } from './data';
-import GiftBanners from './components/giftBanners/GiftBanners';
+import GiftBanners from './pages/giftBanners/GiftBanners';
 import GiftBuilder from './pages/giftBuilder';
 
-import './App.css';
 import PdpPopupContextProvider from './contexts/PdpPopupContext';
 import SelectedProductContextProvider from './contexts/SelectedProductContext';
 import ChosenProductContextProvider from './contexts/ChosenProductContext';
+
+import './App.css';
+import ErrorHandle from './components/ErrorHandle';
 
 const App = () => {
   const [selectedBanner, setSelectedBanner] = useState(null);
   const [choice1, setChoice1] = useState([]);
   const [choice2, setChoice2] = useState([]);
   const [choice3, setChoice3] = useState([]);
-  const [choiceRenderData, setchoiceRenderData] = useState({});
+  const [choiceRenderData, setChoiceRenderData] = useState({});
+
+  const [httpErr, setHttpErr] = useState(false);
 
   // const { popupState } = useContext(PdpPopupContext);
 
@@ -24,7 +28,8 @@ const App = () => {
     setChoice3(data.choice3);
   };
   useEffect(() => {
-    if (!selectedBanner) return;
+    let mounted;
+    if (!selectedBanner && !mounted) return;
     const getSelectPageData = async () => {
       const response1 = await Promise.all(choice1.handles.map((handle) => fetch(`/products/${handle}.js`)));
       const jsonData1 = await Promise.all(response1.map((resp) => resp.json()));
@@ -42,23 +47,32 @@ const App = () => {
           { stepTitle: choice3.stepTitle, stepId: 3, data: jsonData3 },
         ],
       };
-      setchoiceRenderData(finalData);
+      console.log(finalData);
+      setChoiceRenderData(finalData);
     };
 
-    getSelectPageData();
+    getSelectPageData().catch((err) => {
+      console.log(err);
+      setHttpErr(true);
+    });
+    return () => (mounted = false);
   }, [selectedBanner, choice1, choice2.handles, choice2.stepTitle, choice3.handles, choice3.stepTitle]);
+
+  const renderApp = () => {
+    if (selectedBanner && !httpErr) {
+      return <GiftBuilder pageData={choiceRenderData} />;
+    } else if (!selectedBanner && !httpErr) {
+      return <GiftBanners bannersData={pamperData} bannerClickHandler={bannerClickHandler} />;
+    } else if (httpErr) {
+      return <ErrorHandle />;
+    }
+  };
 
   return (
     <ChosenProductContextProvider>
       <SelectedProductContextProvider>
         <PdpPopupContextProvider>
-          <div className='appwrapper container-fluid'>
-            {selectedBanner ? (
-              <GiftBuilder pageData={choiceRenderData} />
-            ) : (
-              <GiftBanners bannersData={pamperData} bannerClickHandler={bannerClickHandler} />
-            )}
-          </div>
+          <div className='appwrapper container-fluid'>{renderApp()}</div>
         </PdpPopupContextProvider>
       </SelectedProductContextProvider>
     </ChosenProductContextProvider>
