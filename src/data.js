@@ -84,7 +84,7 @@ export const pamperData = [
     },
     choice3: {
       stepTitle: 'Choose a gorgeous make-up brush',
-      handles: ['ultraaaaaa-colour-60-second-express-nail-enamel'],
+      handles: ['ultra-colour-60-second-express-nail-enamel'],
     },
   },
 ];
