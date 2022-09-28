@@ -40,6 +40,10 @@
     justify-content: center;
     gap: 24px;
 
+}
+
+.productsrow .product-card:nth-child(odd) {
+    margin-right: auto;
 
 }
 
