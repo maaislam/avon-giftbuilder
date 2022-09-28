@@ -1,0 +1,97 @@
+.variant-wrapper {
+    position: relative;
+    display: none;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+@media only screen and (max-width: 800px) {
+    .variant-wrapper {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .variant-wrapper {
+        margin-bottom: 20px;
+    }
+}
+
+.variant-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 0;
+    font-size: 18px;
+    line-height: 1.3;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .variant-header {
+        padding-right: 0;
+        font-size: 14px;
+    }
+}
+
+.variant-header--title {
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+
+.variant-wrapper .variant-options {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .variant-wrapper .variant-options {
+        justify-content: space-evenly;
+    }
+}
+
+.variant-wrapper .variant-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    margin: 0 10px 10px 0;
+    border-radius: 50%;
+    border: 1px solid #c0c0c0;
+}
+
+.variant-wrapper .variant-option.active-swatch {
+    border: 2px solid #7f28c4;
+}
+
+
+
+.variant-circle-img {
+    position: relative;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    border: 1px solid #c0c0c0;
+    overflow: hidden;
+}
+
+.variant-circle-img.hide {
+    display: none;
+}
+
+.variant-option.not-available {
+    opacity: 0.6;
+    text-decoration: line-through;
+}

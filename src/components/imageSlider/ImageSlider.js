@@ -8,7 +8,7 @@ import 'swiper/css';
 import SliderImg from './SliderImg';
 
 const ImageSlider = ({ images, title, position }) => {
-  const isMobile = window.matchMedia('(max-width: 600px)').matches;
+  //const isMobile = window.matchMedia('(max-width: 600px)').matches;
   const sliderImages = images.map((imgSrc, i) => {
     return (
       <SwiperSlide data-swiper-autoplay={`${i < 2 ? '500' : '2000'}`} style={{ display: 'flex', alignItems: 'center' }} key={i}>
@@ -17,7 +17,7 @@ const ImageSlider = ({ images, title, position }) => {
     );
   });
   return (
-    <Swiper style={{ height: '100%' }} modules={[Autoplay]} slidesPerView={position !== 'modal' || isMobile ? 1 : 2}>
+    <Swiper style={{ height: '100%' }} modules={[Autoplay]} slidesPerView={position !== 'modal' ? 1 : 2}>
       {sliderImages}
     </Swiper>
   );

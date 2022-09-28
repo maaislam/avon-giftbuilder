@@ -34,7 +34,7 @@
 
 @media only screen and (max-width: 600px) {
     .yotpo .yotpo-icon {
-        font-size: 14px;
+        font-size: 14px !important;
     }
 }
 

@@ -11,6 +11,7 @@ import formatPrice from '../../helpers/formatPrice';
 import OfferBar from '../../components/offerbar/OfferBar';
 import Loader from '../../components/Loader';
 import scrollToTop from '../../helpers/scrollTop';
+import VariantsBlock from '../../components/variantsBlock/Variants';
 
 const GiftBuilder = ({ pageData }) => {
   const { bundledPrice, allData } = pageData;
@@ -53,6 +54,7 @@ const GiftBuilder = ({ pageData }) => {
                 selected={selectedVariant}
                 onSelectionChange={onSelectionChange}
               />
+              <VariantsBlock variants={chosenProduct.variants} selected={selectedVariant} onSelectionChange={onSelectionChange} />
             </Card>
           </PdpModal>
         )}
