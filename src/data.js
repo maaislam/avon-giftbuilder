@@ -2,21 +2,21 @@ export const pamperData = [
   {
     name: 'Gorgeous & Glam Make-Up',
     currentPrice: 1200,
-    prevPrice: 2100,
+    prevPrice: 2000,
     image: 'gift-pamper1.png',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    description: 'Build your own cosy night in set, unlock magical savings of upto 15% off.Everyone deserse a cosy night in!',
+    dealTitle: 'Gorgeous & Glam Make-Up Gift Set – 3 for £12 (worth up to £21)',
     btnText: 'Shop now',
     choice1: {
       stepTitle: 'Choose the perfect lip finish and shade.',
-      handles: ['avon-true-ultra-satin-lipstick', 'avon-true-colour-lipstick', 'new-ultra-shimmer-lipstick'],
+      handles: ['fried-egg-test', 'avon-true-colour-lipstick', 'new-ultra-shimmer-lipstick'],
     },
     choice2: {
       stepTitle: 'Choose a highlighter or bronzer.',
       handles: ['avon-true-bronzing-pearls', 'true-colour-glow-bronzing-pearls', 'true-colour-illuminating-pearls'],
     },
     choice3: {
-      stepTitle: 'Choose a gorgeous make-up brush.',
+      stepTitle: 'Choose a professional make-up brush.',
       handles: ['all-over-face-brush-1', 'angled-blush-brush', 'kabuki-brush'],
     },
   },
@@ -28,6 +28,7 @@ export const pamperData = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     btnText: 'Shop now',
+    dealTitle: 'Cleansing & Radiant Skincare Gift Set – 3 for £28 (worth up to £49',
     choice1: {
       stepTitle: 'Choose a refreshing cleanser.',
       handles: [
@@ -57,6 +58,7 @@ export const pamperData = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     btnText: 'Shop now',
+    dealTitle: 'Relaxing & Pampering Gift Set – 3 for £12 (worth up to £23)',
     choice1: {
       stepTitle: 'Choose a relaxing face mask.',
       handles: ['anew-radiance-maximising-gold-mask', 'anew-lifting-silver-mask-75ml', 'anew-revitalising-copper-mask'],
@@ -78,6 +80,7 @@ export const pamperData = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     btnText: 'Shop now',
+    dealTitle: 'Cosy & Chilled Gift Set – 3 for £12 (worth up to £15)',
     choice1: {
       stepTitle: 'Choose a relaxing treat.',
       handles: [
@@ -103,6 +106,7 @@ export const pamperData = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     btnText: 'Shop now',
+    dealTitle: 'Calm & Unwinding Gift Set – 3 for £12 (worth up to £14',
     choice1: {
       stepTitle: 'Choose a scent-sational candle.',
       handles: ['wild-berries-candle', 'sweet-rose-candle-120g', 'new-happy-uplifting-candle'],
@@ -121,13 +125,14 @@ export const pamperData = [
     },
   },
   {
-    name: 'FRESH & GROOMED',
+    name: 'Cool & Groomed',
     currentPrice: 1500,
     prevPrice: 1800,
     image: 'gift-pamper3.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     btnText: 'Shop now',
+    dealTitle: 'Cool & Groome Gift Set – 3 for £15 (worth up to £18)',
     choice1: {
       stepTitle: 'Lorem ipsum dolor sit amet.',
       handles: ['kris-washbag', 'musk-marine-eau-de-toilette-75ml', 'musk-intense-eau-de-toilette-75ml'],

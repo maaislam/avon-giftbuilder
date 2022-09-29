@@ -41,6 +41,7 @@ const App = () => {
       const jsonData3 = await Promise.all(response3.map((resp) => resp.json()));
       const finalData = {
         bundledPrice: selectedBanner.currentPrice,
+        dealTitle: selectedBanner.dealTitle,
         allData: [
           { stepTitle: choice1.stepTitle, stepId: 1, data: jsonData1 },
           { stepTitle: choice2.stepTitle, stepId: 2, data: jsonData2 },

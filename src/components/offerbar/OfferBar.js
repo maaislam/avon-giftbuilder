@@ -82,7 +82,7 @@ const OfferBar = ({ bundledPrice }) => {
         {selectedCount > 2 ? (
           <>
             <div className='offer-details'>
-              <ProductPrice oldPrice={bundledPrice} priceYouPay={total} />
+              <ProductPrice oldPrice={total} priceYouPay={bundledPrice} />
             </div>
             <div className={`addtocart-btn ${addtoCart || 'add-to-cart'}`} onClick={() => setAddtoCart('Adding-to-cart')}>
               {addtoCart.split('-').join(' ') || 'Add to cart'}
