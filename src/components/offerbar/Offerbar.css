@@ -28,7 +28,8 @@
 }
 
 .offerbar-container .selected-items {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
     align-items: center;
     gap: 16px;
@@ -58,6 +59,12 @@
     background-color: #fff;
     transition: all 0.3s ease;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .offerbar-container .addtocart-btn {
+        max-width: 280px;
+    }
 }
 
 .offerbar-container .addtocart-btn.adding {
