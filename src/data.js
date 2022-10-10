@@ -1,5 +1,7 @@
 export const pamperData = [
   {
+    bundleId: '7220497383469',
+    bundleHandle: 'build-a-gift-make-up-guru',
     name: 'Gorgeous & Glam Make-Up',
     currentPrice: 1200,
     prevPrice: 2000,
@@ -9,18 +11,20 @@ export const pamperData = [
     btnText: 'Shop now',
     choice1: {
       stepTitle: 'Choose the perfect lip finish and shade.',
-      handles: ['fried-egg-test', 'avon-true-colour-lipstick', 'new-ultra-shimmer-lipstick'],
+      handles: ['avon-true-colour-lipstick', 'new-ultra-shimmer-lipstick'],
     },
     choice2: {
       stepTitle: 'Choose a highlighter or bronzer.',
-      handles: ['avon-true-bronzing-pearls', 'true-colour-glow-bronzing-pearls', 'true-colour-illuminating-pearls'],
+      handles: ['true-colour-glow-bronzing-pearls', 'true-colour-illuminating-pearls'],
     },
     choice3: {
       stepTitle: 'Choose a professional make-up brush.',
-      handles: ['all-over-face-brush-1', 'angled-blush-brush', 'kabuki-brush'],
+      handles: ['all-over-face-brush', 'angled-blush-brush', 'kabuki-brush'],
     },
   },
   {
+    bundleId: '7220500856877',
+    bundleHandle: 'build-a-gift-skincare-saviour',
     name: 'Cleansing & Radiant Skincare',
     currentPrice: 2800,
     prevPrice: 4900,
@@ -51,6 +55,8 @@ export const pamperData = [
     },
   },
   {
+    bundleId: '220510294061',
+    bundleHandle: 'build-a-gift-pampering-gift-set',
     name: 'Relaxing & Pampering',
     currentPrice: 1200,
     prevPrice: 2300,
@@ -73,6 +79,8 @@ export const pamperData = [
     },
   },
   {
+    bundleId: '7220504363053',
+    bundleHandle: 'cosy-night-in',
     name: 'Cosy & Chilled',
     currentPrice: 1200,
     prevPrice: 1500,
@@ -99,6 +107,8 @@ export const pamperData = [
     },
   },
   {
+    bundleId: '7220506198061',
+    bundleHandle: 'moments-of-calm',
     name: 'Calm & Unwinding',
     currentPrice: 1200,
     prevPrice: 1400,
@@ -125,6 +135,8 @@ export const pamperData = [
     },
   },
   {
+    bundleId: '7220507738157',
+    bundleHandle: 'groom-and-go-set',
     name: 'Cool & Groomed',
     currentPrice: 1500,
     prevPrice: 1800,

@@ -7,7 +7,6 @@ const VariantDropdown = ({ variants, selected, onSelectionChange }) => {
   const [selectedSwatchIdx, setSelectedSwatchIdx] = useState('');
 
   const variantList = variants.map((variant, index) => {
-    console.log(variant);
     const swatchName = variant.name.split('-')[1].trim();
     const isAvailableClass = variant.available ? '' : 'not-available';
     return (

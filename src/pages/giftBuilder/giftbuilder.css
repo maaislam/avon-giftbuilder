@@ -49,10 +49,12 @@
 }
 
 .productsrow .product-card {
-    margin: 8px auto;
+    margin: 8px 10px;
 }
 
-@media only screen and (max-width: 850px) {
+
+
+@media only screen and (max-width: 1280px) {
     .productsrow {
         max-width: 600px;
     }

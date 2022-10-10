@@ -42,13 +42,15 @@ const App = () => {
       const finalData = {
         bundledPrice: selectedBanner.currentPrice,
         dealTitle: selectedBanner.dealTitle,
+        bundleId: selectedBanner.bundleId,
+        bundleHandle: selectedBanner.bundleHandle,
         allData: [
           { stepTitle: choice1.stepTitle, stepId: 1, data: jsonData1 },
           { stepTitle: choice2.stepTitle, stepId: 2, data: jsonData2 },
           { stepTitle: choice3.stepTitle, stepId: 3, data: jsonData3 },
         ],
       };
-      console.log(finalData);
+      // console.log(finalData);
       setChoiceRenderData(finalData);
     };
 

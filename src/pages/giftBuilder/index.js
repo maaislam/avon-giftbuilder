@@ -14,7 +14,7 @@ import scrollToTop from '../../helpers/scrollTop';
 import VariantsBlock from '../../components/variantsBlock/Variants';
 
 const GiftBuilder = ({ pageData }) => {
-  const { bundledPrice, dealTitle, allData } = pageData;
+  const { bundledPrice, dealTitle, bundleId, allData } = pageData;
   //console.log(pageData);
   useEffect(() => {
     scrollToTop();
@@ -41,7 +41,7 @@ const GiftBuilder = ({ pageData }) => {
         {allData ? (
           <>
             <ProductRows rowsData={allData} />
-            <OfferBar bundledPrice={bundledPrice} />
+            <OfferBar bundledPrice={bundledPrice} bundleId={bundleId} dealTitle={dealTitle} />
           </>
         ) : (
           <Loader />

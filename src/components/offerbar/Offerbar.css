@@ -27,6 +27,10 @@
     align-items: center;
 }
 
+.offerbar-container-inner img {
+    margin: 0 auto
+}
+
 .offerbar-container .selected-items {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
