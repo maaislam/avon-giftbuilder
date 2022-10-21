@@ -4,7 +4,7 @@ import './VariantDropdown.css';
 
 const VariantDropdown = ({ variants, selected, onSelectionChange }) => {
   const [dropdownState, setDropdownState] = useState(false);
-  const [selectedSwatchIdx, setSelectedSwatchIdx] = useState('');
+  const [selectedSwatchIdx, setSelectedSwatchIdx] = useState(0);
 
   const variantList = variants.map((variant, index) => {
     const swatchName = variant.name.split('-')[1].trim();

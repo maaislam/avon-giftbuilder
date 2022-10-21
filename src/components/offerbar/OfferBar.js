@@ -8,7 +8,7 @@ import './Offerbar.css';
 const OfferBar = ({ bundledPrice, bundleId, dealTitle }) => {
   const { selectedProducts, setSelectedProducts } = useContext(selectedProductContext);
 
-  const [addtoCart, setAddtoCart] = useState('Add-to-cart');
+  const [addtoCart, setAddtoCart] = useState('Add-to-bag');
 
   //console.log(selectedProducts);
   const cdnDomain = 'https://ucds.ams3.digitaloceanspaces.com/AvonGifting';
@@ -53,10 +53,10 @@ const OfferBar = ({ bundledPrice, bundleId, dealTitle }) => {
       };
       const response = await fetch(addToCartEndpoint, options);
       if (response.status !== 200) {
-        setAddtoCart('Add-to-cart');
+        setAddtoCart('Add-to-bag');
         return;
       }
-      setAddtoCart('Added-to-cart');
+      setAddtoCart('Added-to-bag');
       const data = await response.json();
       //init trackings
       if (!data) return;
@@ -102,8 +102,8 @@ const OfferBar = ({ bundledPrice, bundleId, dealTitle }) => {
             <div className='offer-details'>
               <ProductPrice oldPrice={total} priceYouPay={bundledPrice} />
             </div>
-            <div className={`addtocart-btn ${addtoCart || 'add-to-cart'}`} onClick={() => setAddtoCart('Adding-to-cart')}>
-              {addtoCart.split('-').join(' ') || 'Add to cart'}
+            <div className={`addtocart-btn ${addtoCart || 'add-to-cart'}`} onClick={() => setAddtoCart('Adding-to-bag')}>
+              {addtoCart.split('-').join(' ') || 'Add to bag'}
             </div>
           </>
         ) : (

@@ -76,7 +76,13 @@
     .productsrow {
         max-width: 400px;
     }
+
+    .productsrow .product-card {
+        margin: 8px;
+    }
+
 }
+
 
 
 .productrow-header {

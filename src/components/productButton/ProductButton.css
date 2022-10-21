@@ -30,10 +30,17 @@ button.product-primary-btn.remove {
     transition: all 0.3s ease;
 }
 
+button.product-primary-btn.out-of-stock {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #E3E3E3;
+    pointer-events: none;
+}
+
 button.product-primary-btn.remove:hover {
 
     color: #000;
-    background-color: #d9d9d9;
+    background-color: #fff;
     border: 1px solid #212121;
 
 }

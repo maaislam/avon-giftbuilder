@@ -13,7 +13,7 @@
 @media only screen and (max-width: 400px) {
     .product-image-container p {
         min-height: 60px;
-
+        font-size: 14px
     }
 }
 
@@ -43,6 +43,14 @@
         height: 154px;
     }
 }
+
+@media only screen and (max-width: 360px) {
+    .product-image-container .product-image {
+        width: 126px;
+        height: 126px;
+    }
+}
+
 
 /* @media only screen and (max-width: 400px) {
     .product-image-container .product-image {

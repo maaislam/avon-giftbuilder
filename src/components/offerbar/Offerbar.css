@@ -1,13 +1,17 @@
 .offerbar-container {
     position: sticky;
-    bottom: -120px;
+    bottom: -70px;
     width: 100vw;
     margin-inline-start: 50%;
-    padding: 20px 0 40px;
+    padding: 12px 16px 16px;
     color: #fff;
     background-color: rgba(33, 33, 33, 95%);
     transform: translateX(-50%);
     z-index: 99;
+}
+
+.offerbar-container .product-price-container {
+    margin-top: 12px;
 }
 
 .offerbar-container.item-selected {
@@ -16,7 +20,7 @@
 }
 
 .offerbar-container.no-item-selected {
-    bottom: -120px;
+    bottom: -70px;
     animation: slide-out-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
@@ -25,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    line-height: 1;
 }
 
 .offerbar-container-inner img {
@@ -37,7 +42,7 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-    margin: 20px 0;
+    margin: 12px 0 0;
 }
 
 .offerbar-container .selected-item {
@@ -84,7 +89,7 @@
 @keyframes slide-in-bottom {
     0% {
 
-        bottom: -120px;
+        bottom: -70px;
     }
 
     100% {
@@ -98,6 +103,6 @@
     }
 
     100% {
-        bottom: -120px;
+        bottom: -70px;
     }
 }

@@ -92,6 +92,7 @@
 }
 
 .variant-option.not-available {
-    opacity: 0.6;
+    opacity: 0.4;
     text-decoration: line-through;
+    pointer-events: none
 }

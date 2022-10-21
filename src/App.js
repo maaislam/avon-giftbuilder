@@ -50,7 +50,7 @@ const App = () => {
           { stepTitle: choice3.stepTitle, stepId: 3, data: jsonData3 },
         ],
       };
-      // console.log(finalData);
+      console.log(finalData);
       setChoiceRenderData(finalData);
     };
 

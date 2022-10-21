@@ -12,8 +12,8 @@ import './Card.css';
 
 const Card = ({ cardData, selectedVariant, children, position }) => {
   // console.log(selectedVariant);
-  const { id, stepId, compare_at_price, price, images, title, variants } = cardData;
-  //console.log('cardData', cardData, stepId);
+  const { available, id, stepId, compare_at_price, price, images, title, variants } = cardData;
+  console.log('cardData', cardData, stepId);
   const [btnText, setBtnText] = useState('');
 
   const { setPopupState } = useContext(PdpPopupContext);
@@ -73,7 +73,11 @@ const Card = ({ cardData, selectedVariant, children, position }) => {
         <Ratings prodId={id} />
         <ProductPrice oldPrice={compare_at_price} priceYouPay={price} />
         {children}
-        <ProductButton btnText={`${children ? 'Select' : btnText}`} btnClickHandler={btnClickHandler} />
+        {available ? (
+          <ProductButton btnText={`${children ? 'Select' : btnText}`} btnClickHandler={btnClickHandler} />
+        ) : (
+          <ProductButton btnText='Out of stock' />
+        )}
       </div>
     </div>
   );

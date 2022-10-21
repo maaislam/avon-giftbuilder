@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageSlider from '../imageSlider/ImageSlider';
+import ReactReadMoreReadLess from 'react-read-more-read-less';
 
 import './ProductImage.css';
 
@@ -9,7 +10,11 @@ const ProductImage = ({ title, images, position }) => {
       <div className={`product-image ${position === 'modal' ? 'in-modal' : ''}`}>
         <ImageSlider images={images} title={title} position={position} />
       </div>
-      <p className='product-name'>{title}</p>
+      <p className='product-name'>
+        <ReactReadMoreReadLess charLimit={26} readMoreText={'▼'} readLessText={'▲'}>
+          {title}
+        </ReactReadMoreReadLess>
+      </p>
     </div>
   );
 };

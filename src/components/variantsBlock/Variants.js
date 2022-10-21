@@ -4,7 +4,7 @@ import Variant from './Variant';
 import './Variants.css';
 
 const VariantsBlock = ({ variants, selected, onSelectionChange }) => {
-  const [selectedSwatchIdx, setSelectedSwatchIdx] = useState('');
+  const [selectedSwatchIdx, setSelectedSwatchIdx] = useState(0);
   const variantOptions = variants.map((variant, index) => {
     return (
       <Variant

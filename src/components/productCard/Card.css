@@ -23,6 +23,14 @@
     }
 }
 
+@media only screen and (max-width: 360px) {
+    .product-card {
+        max-width: 126px;
+    }
+}
+
+
+
 .product-details-wrapper {
     display: flex;
     flex-direction: column;
