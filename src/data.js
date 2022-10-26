@@ -139,7 +139,7 @@ export const pamperData = [
     image: 'gift-pamper6.png',
     description: 'Create a cool and groomed gift to keep them feeling fresh.',
     btnText: 'Shop now',
-    dealTitle: 'Cool & Groome Gift Set – 3 for £15 (worth up to £18)',
+    dealTitle: 'Cool & Groomed Gift Set – 3 for £15 (worth up to £18)',
     choice1: {
       stepTitle: 'Add the sophisticated washbag.',
       handles: ['kris-washbag'],

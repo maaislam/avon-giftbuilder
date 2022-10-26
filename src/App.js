@@ -9,12 +9,11 @@ import ChosenProductContextProvider from './contexts/ChosenProductContext';
 
 import './App.css';
 import ErrorHandle from './components/ErrorHandle';
+import SelectedGiftOptionContextProvider from './contexts/SelectedGiftOptionContext';
 
 const App = () => {
-  const [selectedBanner, setSelectedBanner] = useState(null);
-  const [choice1, setChoice1] = useState([]);
-  const [choice2, setChoice2] = useState([]);
-  const [choice3, setChoice3] = useState([]);
+  const [selectedBanner, setSelectedBanner] = useState(JSON.parse(localStorage.getItem('avon-mealdeal-preselected')) || null);
+
   const [choiceRenderData, setChoiceRenderData] = useState({});
 
   const [httpErr, setHttpErr] = useState(false);
@@ -23,14 +22,12 @@ const App = () => {
 
   const bannerClickHandler = (data) => {
     setSelectedBanner(data);
-    setChoice1(data.choice1);
-    setChoice2(data.choice2);
-    setChoice3(data.choice3);
   };
   useEffect(() => {
     let mounted;
     if (!selectedBanner && !mounted) return;
     const getSelectPageData = async () => {
+      const { choice1, choice2, choice3 } = selectedBanner;
       const response1 = await Promise.all(choice1.handles.map((handle) => fetch(`/products/${handle}.js`)));
       const jsonData1 = await Promise.all(response1.map((resp) => resp.json()));
 
@@ -52,18 +49,20 @@ const App = () => {
       };
       console.log(finalData);
       setChoiceRenderData(finalData);
+      localStorage.removeItem('avon-mealdeal-preselected');
     };
 
     getSelectPageData().catch((err) => {
       console.log(err);
       setHttpErr(true);
+      localStorage.removeItem('avon-mealdeal-preselected');
     });
     return () => (mounted = false);
-  }, [selectedBanner, choice1, choice2.handles, choice2.stepTitle, choice3.handles, choice3.stepTitle]);
+  }, [selectedBanner]);
 
   const renderApp = () => {
     if (selectedBanner && !httpErr) {
-      return <GiftBuilder pageData={choiceRenderData} />;
+      return <GiftBuilder pageData={choiceRenderData} currentSelection={selectedBanner} />;
     } else if (!selectedBanner && !httpErr) {
       return <GiftBanners bannersData={pamperData} bannerClickHandler={bannerClickHandler} />;
     } else if (httpErr) {
@@ -72,13 +71,15 @@ const App = () => {
   };
 
   return (
-    <ChosenProductContextProvider>
-      <SelectedProductContextProvider>
-        <PdpPopupContextProvider>
-          <div className='appwrapper container-fluid'>{renderApp()}</div>
-        </PdpPopupContextProvider>
-      </SelectedProductContextProvider>
-    </ChosenProductContextProvider>
+    <SelectedGiftOptionContextProvider>
+      <ChosenProductContextProvider>
+        <SelectedProductContextProvider>
+          <PdpPopupContextProvider>
+            <div className='appwrapper container-fluid'>{renderApp()}</div>
+          </PdpPopupContextProvider>
+        </SelectedProductContextProvider>
+      </ChosenProductContextProvider>
+    </SelectedGiftOptionContextProvider>
   );
 };
 

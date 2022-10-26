@@ -5,7 +5,7 @@
     margin-bottom: 32px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .variant-wrapper {
         display: block;
     }
@@ -50,9 +50,9 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .variant-wrapper .variant-options {
-        justify-content: space-evenly;
-    }
+    /* .variant-wrapper .variant-options {
+    //justify-content: space-evenly;
+} */
 }
 
 .variant-wrapper .variant-option {

@@ -31,7 +31,9 @@ const VariantDropdown = ({ variants, selected, onSelectionChange }) => {
   });
 
   const selectedItem =
-    Object.keys(selected).length === 0 || !variants.some((variant) => variant.id === selected.id) ? variants[0] : selected;
+    Object.keys(selected).length === 0 || !variants.some((variant) => variant.id === selected.id) || selectedSwatchIdx === 0
+      ? variants[0]
+      : selected;
   return (
     <div className='dd-wrapper'>
       <div className='dd-header' onClick={() => setDropdownState(!dropdownState)}>

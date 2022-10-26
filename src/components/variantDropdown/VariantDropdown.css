@@ -6,7 +6,7 @@
     margin-bottom: 32px;
     border: 1px solid #e3e3e3;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .dd-wrapper {
         display: none;
     }
@@ -41,12 +41,12 @@
 
 .dd-wrapper .dd-options {
     display: none;
-    position: absolute;
+    position: static;
     top: 100%;
-    left: 50%;
+    /* left: 50%; */
     width: calc(100% + 2px);
     max-height: 300px;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     background-color: #fff;
     border: 1px solid #e3e3e3;
     overflow-y: scroll;
